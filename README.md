@@ -1,6 +1,6 @@
 # 🎨 Portfolio
 
-Un portfolio interactif développé avec **React** afin d'apprendre ce nouveau language.
+Un portfolio interactif développé avec **React** dans le but d'apprendre et maîtriser ce langage.
 
 ## 🚀 Fonctionnalités
 - 📄 Présentation des projets
