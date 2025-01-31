@@ -1,12 +1,13 @@
-const DetailProject = ({ projectName, projectDescription }) => {
+export default function DetailProject(props) {
+    const { project } = props;
     return (
-
-        <div>
-            <h1>{projectName}</h1>
-            <p>{projectDescription}</p>
-
-        </div>
+        <>
+            <h2>Page de détail d'un projet</h2>
+            <article>
+                <img src={project.image} alt={project.name} className="project-image" />
+                <h2>{project.name}</h2>
+                <p>{project.description}</p>
+            </article>
+        </>
     );
-};
-
-export default DetailProject;
+}

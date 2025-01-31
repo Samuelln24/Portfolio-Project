@@ -1,30 +1,43 @@
-import { useState } from 'react'
+import { useState } from "react";
 
+export default function Contact() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
-const Contact = () => {
-
-    const submit = (a) => {
-        a.preventDefault();
-    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Recuperation des champs :", name, email, message);
+    };
 
     return (
-        <form onSubmit={submit}>
-            <div>
-                <label>Nom :</label>
-                <input type="text" name="name" />
-            </div>
-            <div>
-                <label>Email :</label>
-                <input type="text" name="email" />
-            </div>
-            <div>
-                <label>Message :</label>
-                <textarea name="message"></textarea>
-            </div>
-            <button type="submit">Envoyer</button>
-        </form>
+        <>
+            <h1>Formulaire de contact</h1>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Saisir votre nom"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Saisir votre email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <textarea
+                    name="message"
+                    placeholder="Saisir votre message"
+                    rows="10"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                />
+                <button type="submit">Envoyer le formulaire</button>
+            </form>
+        </>
     );
-};
-
-export default Contact;
+}
 
